@@ -10,9 +10,11 @@
  <body>
   <div class="container">    
      <br />
-     <h3 align="center">Laravel Crud </h3>
-     <br />
-     @yield('main')
+      <div class="row">
+     <h1>Ajouter une etudiant</h1>
+      <a class="btn btn-info" href="{{ route('etudiant.index') }}">Ajouter une etudiant</a>
+     </div>
+     //@yield('main')
     </div>
  </body>
 </html>
