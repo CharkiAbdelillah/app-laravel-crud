@@ -34,7 +34,7 @@
     
   @foreach($etudiant as $pro) <!-- hadi tat jbd mn DB -->
    <tr>
-   <td><img src="{{URL::to('/') }}/images/{{ $pro->image }}" class="img-thumbnail" height="90px;" width="90px;"></td>
+   <td><img src="{{$pro->image}" class="img-thumbnail" height="90px;" width="90px;"></td>
     <td> {{ $pro->nom }} </td>
     <td> {{ $pro->email }} </td>
     <td> {{ $pro->branche }} </td>
