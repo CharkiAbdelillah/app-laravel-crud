@@ -25,9 +25,10 @@
  <br>
  <tr>
   <th width="8%">Photo</th>
-  <th width="18%">Nom</th>
-  <th width="18%">Email</th>
-   <th width="18%">Branche</th>
+  <th width="16%">Nom Complet</th>
+ <th width="12%">Genre</th>
+  <th width="16%">Email</th>
+   <th width="10%">Branche</th>
   <th width="28%">Action</th>
  </tr>
   
@@ -36,6 +37,7 @@
    <tr>
    <td><img src="{{URL::to('/') }}/images/{{ $pro->image }}" class="img-thumbnail" height="90px;" width="90px;"></td>
     <td> {{ $pro->nom }} </td>
+    <td> {{ $pro->genre }} </td>
     <td> {{ $pro->email }} </td>
     <td> {{ $pro->branche }} </td>
     <td>

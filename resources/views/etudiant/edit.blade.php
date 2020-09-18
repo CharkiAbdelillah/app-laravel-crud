@@ -19,8 +19,13 @@
   <div class="row">
       <div class="col-lg-12 margin-tb">
          <div class="pull-left">
-         <h2>  Modifier les informations : <h2>
-       </div>
+      <?php
+       if($etudiant->genre=="Homme")  
+       echo  ("<h2>Modifier les informations de l'étudiant <strong>$etudiant->nom</strong> :<h2>");
+       else
+        echo  ("<h2>Modifier les informations de l'étudiante <strong>$etudiant->nom</strong> :<h2>");
+      ?>  
+     </div>
 
        <div class="pull-right">
        <a class="btn btn-success" href="{{ route('etudiant.index')}}">Retour</a>
@@ -38,7 +43,17 @@
    <input type="text" name="nom" class="form-control" value="{{$etudiant->nom}}" />
   </div>
  </div>
- 
+ <div class="col-xs-6 col-sm-6 col-md-6>
+ <div class="form-group">
+   <?php echo("<strong>Genre ($etudiant->genre) :</strong>");?>
+       <div class="radio">
+      <label><input type="radio" name="genre" value="Homme" >Homme</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="genre" value="Femme">Femme</label>
+    </div>
+ </div>
+ </div>
  <div class="col-xs-6 col-sm-6 col-md-6>
    <div class="form-group">
    <strong>Email : </strong>
@@ -73,9 +88,6 @@
   </div>
  </div>
 </div>
-<?php   
-echo getcwd() . "\n"; 
-?> 
 <div class="col-xs-6 col-sm-6 col-md-6>
   <div class="form-group">
  <button type="submit" class="btn btn-primary">Ok</button>

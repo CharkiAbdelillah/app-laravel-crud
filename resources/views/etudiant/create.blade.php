@@ -35,6 +35,19 @@
     </div>
   </div>
 
+<div class="col-xs-6 col-sm-6 col-md-6>
+ <div class="form-group">
+ <strong>Genre : </strong>
+     <div class="radio">
+      <label><input type="radio" name="genre" value="Homme" >Homme</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="genre" value="Femme">Femme</label>
+    </div>
+    </div>
+  </div>
+
+
  <div class="col-xs-6 col-sm-6 col-md-6>
    <div class="form-group">
    <strong>Email : </strong>

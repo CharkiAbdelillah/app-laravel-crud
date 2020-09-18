@@ -16,7 +16,8 @@ class CreateEtudiantsTable extends Migration
         Schema::create('etudiants', function (Blueprint $table) {
              $table->increments('id'); 
              $table->string('nom'); 
-            $table->string('email'); 
+            $table->string('email');
+           $table->text('genre');
             $table->text('branche');  
             $table->text('image'); 
             $table->timestamp('created_at')->useCurrent();

@@ -8,7 +8,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
 <style>
         .footer {
-           // position: fixed;
+//            position: fixed;
             left: 0;
             bottom: 0;
 //             height: 180px;

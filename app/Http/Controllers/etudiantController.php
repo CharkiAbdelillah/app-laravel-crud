@@ -25,7 +25,8 @@ class etudiantController extends Controller
         $request->validate([ //<!-- had validate darorir bax dik any error li drt f create tkhdm. o ila 7ydt validate okhlit xi champ khawi fdik create ghay dini page store) -->
             'nom'    =>  'required',
             'email'     =>  'required',
-             'branche'     =>  'required',
+            'genre'    => 'required',
+            'branche'     =>  'required',
             'image'         =>  'required|image|max:2048'
         ]);
 
@@ -35,6 +36,7 @@ class etudiantController extends Controller
         $image->move(public_path('images'), $new_name);
          $data=array(
             'nom' => $request->nom,
+            'genre' => $request->genre,
             'email'  => $request->email,
             'branche'   => $request->branche,
             'image'=> $new_name
@@ -56,6 +58,7 @@ class etudiantController extends Controller
         {
             $request->validate([ //here is the validation part where you can specify any of the input files that you want to validate okay.
             'nom'    =>  'required',
+             'genre'    =>  'required',
             'email'     =>  'required',
              'branche'     =>  'required',
             'image'         =>  'image|max:2048' //the image max size will be 2048mb if not it will no inserted okay.
@@ -68,12 +71,14 @@ class etudiantController extends Controller
         {
             $request->validate([
                 'nom'    =>  'required',
+                 'genre'    =>  'required',
                 'email'    =>  'required',
                 'branche'     =>  'required'
             ]);
         }
         $data=array(
            'nom' => $request->nom,
+            'genre' => $request->genre,
             'email'  => $request->email,
             'branche'   => $request->branche,
             'image'=> $image_name
