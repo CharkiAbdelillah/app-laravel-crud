@@ -19,7 +19,9 @@ class CreateEtudiantsTable extends Migration
             $table->string('email'); 
             $table->text('branche');  
             $table->text('image'); 
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+             $table->timestamp('updated_at')->nullable();
+           // $table->timestamps();
         });
     }
 

@@ -1,0 +1,126 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\etudiant;
+use DB;
+class etudiantController extends Controller
+{
+    public function index()
+      {
+           $etudiant = DB::table('etudiants')->latest()->paginate(6);
+           return view('etudiant.index',compact('etudiant'));
+      }
+     
+     public function create()
+       {
+       return view('etudiant.create');
+       }
+     
+      public function store(Request $request)
+    {
+       
+
+ $request->validate([ //<!-- had validate darorir bax dik any error li drt f create tkhdm. o ila 7ydt validate okhlit xi champ khawi fdik create ghay dini page store) -->
+            'nom'    =>  'required',
+            'email'     =>  'required',
+             'branche'     =>  'required',
+            'image'         =>  'required|image|max:2048'
+        ]);
+
+
+
+
+         $data=array();
+            $data['nom']   = $request->nom;
+            $data['email']   = $request->email;
+            $data['branche']   = $request->branche;
+     
+
+        $image = $request->file('image');
+        if($image){
+         $image_name=date('dmy_H_s_i');
+        $ext = strtolower($image->getClientOriginalExtension());
+        $image_full_name=$image_name.'.'.$ext;
+        $upload_path='public/media/';
+       $image_url=$upload_path.$image_full_name;
+       $success=$image->move($upload_path,$image_full_name);       
+       $data['image']=$image_url;
+       $etudiant=DB::table('etudiants')->insert($data);
+
+        return redirect()->route('etudiant.index')
+              ->with('success', 'Données ajoutées avec succès.');
+    }  
+  }
+    public function Edit($id){
+    $etudiant=DB::table('etudiants')->where('id',$id)->first(); 
+    return view('etudiant.edit',compact('etudiant'));
+    }
+
+
+   public function Update(Request $request,$id)
+    {
+        $image = $request->file('image');
+     
+ if($image != '')
+        {
+            $request->validate([
+            'nom'    =>  'required',
+            'email'     =>  'required',
+             'branche'     =>  'required',
+            'image'         =>  'required|image|max:2048'
+   
+          ]);
+                 
+        }
+        else
+        {
+            $request->validate([
+                'nom'    =>  'required',
+                'email'    =>  'required',
+                'branche'     =>  'required'
+            ]);
+        }
+
+     $ancienphoto=$request->ancien_photo;
+        $data=array();
+            $data['nom']   = $request->nom;
+            $data['email']   = $request->email;
+            $data['branche']   = $request->branche;
+     
+
+        $image = $request->file('image');
+        if($image){
+         unlink($ancienphoto);
+         $image_name=date('dmy_H_s_i');
+        $ext = strtolower($image->getClientOriginalExtension());
+        $image_full_name=$image_name.'.'.$ext;
+        $upload_path='public/media/';
+       $image_url=$upload_path.$image_full_name;
+       $success=$image->move($upload_path,$image_full_name);       
+       $data['image']=$image_url;
+       $etudiant=DB::table('etudiants')->where('id',$id)->update($data);
+
+        return redirect()->route('etudiant.index')
+              ->with('success', 'Données Modifier avec succès.');
+    }  
+  }
+
+   public function Delete($id)
+    {
+       $data = DB::table('etudiants')->where('id',$id)->first();
+   // $image1=$data->image; 
+    // unlink($image1); hadi hir bax tm7i image mn dossier sa3a ma3rt malha
+    $etudiant=DB::table('etudiants')->where('id',$id)->delete();
+
+     return redirect()->route('etudiant.index')
+              ->with('success', 'Données Supprimer avec succès.');
+
+    }
+
+      public function Show($id){
+             $data=DB::table('etudiants')->where('id',$id)->first();
+             return view('etudiant.show',compact('data'));
+            }
+}
