@@ -27,3 +27,5 @@ Route::post('update/etudiant/{id}','etudiantController@Update');
 Route::get('delete/etudiant/{id}','etudiantController@Delete');
 
 Route::get('show/etudiant/{id}','etudiantController@Show');
+
+Route::get('/search','etudiantController@search');

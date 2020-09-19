@@ -1,20 +1,29 @@
+
 @extends('etudiant.layout')
 
 @section('content')
 <!-- hadi tat gol sir ldik fichier layout ofdik blasa fin drt yeild('content') ktb hadxi -->
 <br> <br>
      <div class="row">
-    <div class="col-lg-12 margin-tb">
-       <div class="pull-left">
+    <div class="col-md-6">
          <h2> Listes des etudiants de EST Sidi Bennour<h2>  
        </div>
-   
-     <div class="pull-right">
+<br><br><br>
+    <div class="col-md-3 text-center" >
+    <form action="/search" methode="get">
+      <div class="input-group">
+      <input type="search" name="search"  class="form-control">
+       <span class="input-group-prepend">
+   <button type="submit"  class="btn btn-primary">Chercher</button>
+   </span>
+   </div>
+   </form>
+    </div>
+     <div class="col-md-2 text-right">
        <a class="btn btn-success" href="{{ route('create.etudiant')}}">Ajouter un nouveau etudiant</a>
- 
      </div>
    </div> 
-    </div> <!-- dyl class="row" bax dikxi li class row maybanx bl khdr fax creer xi haja .bsbab dik success li drna lta7t -->
+     <!-- dyl class="row" bax dikxi li class row maybanx bl khdr fax creer xi haja .bsbab dik success li drna lta7t -->
     @if($message=Session::get('success'))
      <div class="alert alert-success">
       <p>{{$message}}</p>
@@ -22,7 +31,6 @@
      @endif
    
 <table class="table table-bordered table-striped">
- <br>
  <tr>
   <th width="8%">Photo</th>
   <th width="16%">Nom Complet</th>

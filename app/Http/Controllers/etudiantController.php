@@ -14,6 +14,14 @@ class etudiantController extends Controller
            return view('etudiant.index',compact('etudiant'));
       }
 
+    public function search(Request $request)
+       {
+       $search=$request->get('search');
+      $etudiant=DB::table('etudiants')->where('nom','like','%'.$search.'%')->paginate(5);
+       return view('etudiant.index',compact('etudiant'));
+
+      }
+
      public function create()
        {
        return view('etudiant.create');
