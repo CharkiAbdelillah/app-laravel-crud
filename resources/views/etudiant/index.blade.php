@@ -5,15 +5,13 @@
 <!-- hadi tat gol sir ldik fichier layout ofdik blasa fin drt yeild('content') ktb hadxi -->
  
 <br>
-    <div class="row">
-    <div class="col-lg-12 margin-tb">
-     <div class="pull-left">  
-      <h2>Listes des etudiants de EST Sidi Bennour<h2>  
-       </div>
+   <div class="col-lg-12 "> 
 <div class="pull-right">
 <img src="https://www.tawjihpress.com/wp-content/uploads/2019/04/EST-Sidi-Bennour.jpg"  height="220px;" width="290px;">
 </div>
-</div>
+  <div class="pull-left">  
+      <h2>Listes des etudiants de EST Sidi Bennour<h2>  
+       </div>
 </div>
 <br><br><br><br>
 <div class="row justify-content-md-center">

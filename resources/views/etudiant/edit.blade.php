@@ -43,7 +43,7 @@
  </div>
  <div class="col-xs-12 col-sm-12 col-md-12>
  <div class="form-group">
-   <?php echo("<strong>Genre ($etudiant->genre) :</strong>");?>
+   <?php echo("<strong>Genre <i>( $etudiant->genre )</i> :</strong>");?>
        <div class="radio">
       <label><input type="radio" name="genre" value="Homme" >Homme</label>
     </div>
