@@ -13,31 +13,29 @@
  </ul>
 </div>
 @endif
-  <div class="row">
+
       <div class="col-lg-12 margin-tb">
          <div class="pull-left">
          <h2>  Saisir les informations : <h2>
        </div>
-
        <div class="pull-right">
-       <a class="btn btn-success" href="{{ route('etudiant.index')}}">Retour</a>
+       <a class="btn btn-primary" href="{{ route('etudiant.index')}}">Retour</a>
       </div>
       </div>
 
    <form method="post" action={{ route('etudiant.store') }} enctype="multipart/form-data">
   @csrf
 
- <div class="row">
-  <div class="col-xs-6 col-sm-6 col-md-6>
+  <div class="col-xs-12 col-sm-12 col-md-12>
  <div class="form-group">
    <strong>Nom : </strong>
    <input type="text" name="nom" class="form-control" placeholder="Nom" />
     </div>
   </div>
 
-<div class="col-xs-6 col-sm-6 col-md-6>
+<div class="col-xs-12 col-sm-12 col-md-12>
  <div class="form-group">
- <strong>Genre : </strong>
+<br> <strong>Genre : </strong>
      <div class="radio">
       <label><input type="radio" name="genre" value="Homme" >Homme</label>
     </div>
@@ -47,15 +45,13 @@
     </div>
   </div>
 
-
- <div class="col-xs-6 col-sm-6 col-md-6>
+ <div class="col-xs-12 col-sm-12 col-md-12>
    <div class="form-group">
    <strong>Email : </strong>
    <input type="text" name="email" class="form-control" placeholder="Email" /><br>
   </div>
  </div> 
-<br>
-        <div class="col-xs-6 col-sm-6 col-md-6>
+        <div class="col-xs-12 col-sm-12 col-md-12>
    <div class="form-group">
        <strong>Branche : </strong>
 
@@ -68,19 +64,17 @@
       </div>
      </div>
 
- <div class="col-xs-6 col-sm-6 col-md-6>
+ <div class="col-xs-12 col-sm-12 col-md-12>
    <div class="form-group">
-  <strong>Photo : </strong>
+ <br> <strong>Photo : </strong>
    <input type="file" name="image" />
   </div>
  </div>
 
- <div class="col-xs-6 col-sm-6 col-md-6>
+ <div class="text-center">
   <div class="form-group">
- <button type="submit" class="btn btn-primary">Ok</button>
+ <button type="submit" class="btn btn-primary">Envoyer</button>
  </div>
  </div>
 
-
-  </div>
 </form>

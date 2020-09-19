@@ -11,7 +11,7 @@
             position: static;
             left: 0;
             bottom: 0;
-//             height: 180px;
+//          height: 180px;
             width: 100%;
             background-color: #9C27B0;
             color: white;
