@@ -29,3 +29,5 @@ Route::get('delete/etudiant/{id}','etudiantController@Delete');
 Route::get('show/etudiant/{id}','etudiantController@Show');
 
 Route::get('/search','etudiantController@search');
+Route::get('deletehaha','etudiantController@Deleteall');
+

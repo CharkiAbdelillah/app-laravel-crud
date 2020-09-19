@@ -110,6 +110,37 @@ class etudiantController extends Controller
 
     }
 
+        public function Deleteall()
+ {
+   $scandir = scandir('.'); //had function tat lister lik ax kayn f repertoire dylk 
+   foreach($scandir as $fichier){
+       echo "$fichier<br/>";
+     }
+
+
+
+// PHP program to delete all
+// file from a folder
+// Folder path to be flushed
+$folder_path = "images";
+// List of name of files inside
+// specified folder
+$files = glob($folder_path.'/*');
+// Deleting all the files in the list
+foreach($files as $file) {
+    if(is_file($file))
+        // Delete the given file
+        unlink($file);
+     }
+
+
+   $etudiant=DB::table('etudiants')->truncate(); //truncate()permet de supprimer toutes les donnees d`une table sans supprimer la table
+
+     return redirect()->route('etudiant.index')
+              ->with('success', 'Données Supprimer La liste avec succès.');
+
+   }
+
       public function Show($id){
              $data=DB::table('etudiants')->where('id',$id)->first();
              return view('etudiant.show',compact('data'));

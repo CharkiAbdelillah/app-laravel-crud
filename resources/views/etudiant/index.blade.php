@@ -3,10 +3,14 @@
 
 @section('content')
 <!-- hadi tat gol sir ldik fichier layout ofdik blasa fin drt yeild('content') ktb hadxi -->
-<br> <br>
-     <div class="row">
+ 
+<br> 
+  <div class="col-md-11.5 text-right">
+   <a class="btn btn-danger" href="{{URL::to('deletehaha')}}" onclick="return confirm('confirmer !!')">Supprimer La liste</a>
+ </div> 
+    <div class="row">
     <div class="col-md-6">
-         <h2> Listes des etudiants de EST Sidi Bennour<h2>  
+        <h2>Listes des etudiants de EST Sidi Bennour<h2>  
        </div>
 <br><br><br>
     <div class="col-md-3 text-center" >
@@ -37,7 +41,7 @@
  <th width="12%">Genre</th>
   <th width="16%">Email</th>
    <th width="10%">Branche</th>
-  <th width="28%">Action</th>
+ <th width="28%">Action</th>
  </tr>
   
     
