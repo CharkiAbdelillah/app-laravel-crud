@@ -8,7 +8,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
 <style>
         .footer {
-//            position: fixed;
+            position: static;
             left: 0;
             bottom: 0;
 //             height: 180px;
@@ -30,7 +30,7 @@
         <h4>+21290784557</h4>
         <h4>Mejdyassin@gmail.com</h4>
          <h4>Code source : </h4>
-         <a href="https://github.com/CharkiAbdelillah/app-laravel-crud" style="background-color:black" class="btn btn-success-default ">https://github.com/CharkiAbdelillah/app-laravel-crud</a> 
+         <a href="https://github.com/CharkiAbdelillah/app-laravel-crud"  style="background-color:black" class="btn btn-success-default" target="_blank">https://github.com/CharkiAbdelillah/app-laravel-crud</a> 
     </div>
  </body>
 </html>
