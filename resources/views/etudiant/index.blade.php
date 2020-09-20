@@ -18,7 +18,7 @@
     <div class="col-lg-7" style="text-align:center;">
     <form action="/search" text-align="center" methode="get">
       <div class="input-group">
-      <input type="search" name="search"  class="form-control">
+      <input type="search" name="search"  placeholder="Chercher par le nom" class="form-control">
        <span class="input-group-prepend">
    <button type="submit"  class="btn btn-primary">Chercher</button>
    </span>
