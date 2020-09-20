@@ -35,7 +35,7 @@ class etudiantController extends Controller
             'email'     =>  'required',
             'genre'    => 'required',
             'branche'     =>  'required',
-            'image'         =>  'required|image|max:2048'
+            'image'         =>  'required|image|max:2048|mimes:jpeg,png,jpg,gif,svg'
         ]);
 
         $image = $request->file('image');
@@ -69,7 +69,7 @@ class etudiantController extends Controller
              'genre'    =>  'required',
             'email'     =>  'required',
              'branche'     =>  'required',
-            'image'         =>  'image|max:2048' //the image max size will be 2048mb if not it will no inserted okay.
+            'image'         =>  'image|max:2048|mimes:jpeg,png,jpg,gif,svg' //the image max size will be 2048mb if not it will no inserted okay.
 
           ]);
             $image_name = rand() . '.' . $image->getClientOriginalExtension(); //here is the image extension by the original name of the image and the rand function will generate random numbers for the image name okay.
