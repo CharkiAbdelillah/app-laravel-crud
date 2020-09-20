@@ -22,7 +22,7 @@
     <div class="pull-left">
       <?php
        if($etudiant->genre=="Homme")  
-       echo  ("<h2>Modifier les informations de l'étudiant <strong>$etudiant->nom</strong> :<h2>");
+       echo  ("<h2>Modifier les informations de l'étudiant <strong >$etudiant->nom</strong> :<h2>");
        else
         echo  ("<h2>Modifier les informations de l'étudiante <strong>$etudiant->nom</strong> :<h2>");
       ?>  

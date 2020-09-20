@@ -18,7 +18,24 @@
             color: white;
             text-align: center;
         }
-
+a { color: #fe921f }
+h2 {
+   font-size: 32px;
+  line-height: 150px;
+  text-shadow: -1px -1px , 1px 1px #d60, -3px 0 4px ;
+  font-family:"Segoe print", Arial, Helvetica, sans-serif;
+  color: #9C27B0; 
+  padding:32px;
+  font-weight:lighter;
+  -moz-box-shadow: 2px 2px 6px ;  
+  -webkit-box-shadow: 2px 2px 6px ;  
+  box-shadow:2px 2px 6px ;  
+  text-align:center;
+  display:inline;
+}
+strong{
+color:black;
+}
     </style> 
 </head>
  <body>
